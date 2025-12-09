@@ -1,0 +1,171 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+	background: #f4f4f4;
+}
+
+.header {
+	justify-content: center;
+	/* ngang */
+	align-items: center;
+	text-align: center;
+	background-image: url("/ASM/IMAGE/logo.png");
+}
+
+.headername {
+	margin-left: 1px;
+	padding-top: 20px;
+	font-family: "Poppins", sans-serif;
+	ont-family: "Poppins", sans-serif;
+	font-size: 55px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+
+	/* Màu xanh GenZ chuẩn */
+	color: #00d9ff;
+
+	/* Viền neon nhẹ */
+	text-shadow:
+		0 0 4px #00d9ff,
+		0 0 8px #00aaff,
+		0 0 14px #0088ff;
+
+	/* Không mờ - rõ nét */
+	-webkit-text-stroke: 0px transparent;
+}
+
+.headerbottom {
+
+	background: linear-gradient(to right, #4facfe, #00f2fe);
+
+}
+
+.navmenu {
+	width: 100%;
+	display: block;
+
+}
+
+.menuheader {
+	height: 100%;
+	width: 100%;
+	font-size: 23px;
+	color: white;
+}
+
+.life:hover {
+	color: red;
+	/* đổi màu */
+	font-size: 25px;
+	/* tăng từ 23px → 25px */
+	transition: 0.2s ease;
+	/* mượt hơn */
+
+	text-shadow:
+		/* neon xanh */
+		0 0 4px #00d9ff,
+		0 0 8px #00aaff,
+		0 0 14px #0088ff;
+
+}
+
+.politics:hover {
+	color: red;
+	/* đổi màu */
+	font-size: 25px;
+	/* tăng từ 23px → 25px */
+	transition: 0.2s ease;
+	/* mượt hơn */
+
+	text-shadow:
+		/* neon xanh */
+		0 0 4px #00d9ff,
+		0 0 8px #00aaff,
+		0 0 14px #0088ff;
+
+}
+
+.traffic:hover {
+	color: red;
+	/* đổi màu */
+	font-size: 25px;
+	/* tăng từ 23px → 25px */
+	transition: 0.2s ease;
+	/* mượt hơn */
+
+	text-shadow:
+		/* neon xanh */
+		0 0 4px #00d9ff,
+		0 0 8px #00aaff,
+		0 0 14px #0088ff;
+
+}
+
+.young:hover {
+	color: red;
+	/* đổi màu */
+	font-size: 25px;
+	/* tăng từ 23px → 25px */
+	transition: 0.2s ease;
+	/* mượt hơn */
+
+	text-shadow:
+		/* neon xanh */
+		0 0 4px #00d9ff,
+		0 0 8px #00aaff,
+		0 0 14px #0088ff;
+
+}
+
+.Culture:hover {
+	color: red;
+	/* đổi màu */
+	font-size: 25px;
+	/* tăng từ 23px → 25px */
+	transition: 0.2s ease;
+	/* mượt hơn */
+
+	text-shadow:
+		/* neon xanh */
+		0 0 4px #00d9ff,
+		0 0 8px #00aaff,
+		0 0 14px #0088ff;
+
+}
+
+.Home:hover {
+	color: red;
+	/* đổi màu */
+	font-size: 25px;
+	/* tăng từ 23px → 25px */
+	transition: 0.2s ease;
+	/* mượt hơn */
+
+	text-shadow:
+		/* neon xanh */
+		0 0 4px #00d9ff,
+		0 0 8px #00aaff,
+		0 0 14px #0088ff;
+
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 0 0;
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+}
+
+nav ul li a {
+
+	text-decoration: none;
+	font-weight: bold;
+	cursor: pointer;
+}

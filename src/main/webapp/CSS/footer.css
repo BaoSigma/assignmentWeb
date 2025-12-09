@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+footer {
+	background: #333;
+	justify-content: center;
+	/* ngang */
+	align-items: center;
+	text-align: center;
+	color: white;
+	text-align: center;
+	height: 30px;
+	padding-top: 5px;
+}
