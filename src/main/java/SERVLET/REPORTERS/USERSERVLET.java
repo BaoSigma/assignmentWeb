@@ -1,24 +1,23 @@
 package SERVLET.REPORTERS;
 
+import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
- * Servlet implementation class ReporterServlet
+ * Servlet implementation class USERSERVLET
  */
-@WebServlet("/ReporterServlet")
-public class ReporterServlet extends HttpServlet {
+@WebServlet("/USERSERVLET")
+public class USERSERVLET extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
-     * @see HttpServlet#HttpServlet()
+     * Default constructor. 
      */
-    public ReporterServlet() {
-        super();
+    public USERSERVLET() {
         // TODO Auto-generated constructor stub
     }
 
@@ -29,7 +28,7 @@ public class ReporterServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-	
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
