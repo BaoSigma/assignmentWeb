@@ -8,8 +8,10 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/footer.css">
 </head>
 <body>
-<footer>
-    footer here
+
+    <footer class="footer">
+    <p>Xin chào! Đây là footer của trang web.</p>
 </footer>
+
 </body>
 </html>

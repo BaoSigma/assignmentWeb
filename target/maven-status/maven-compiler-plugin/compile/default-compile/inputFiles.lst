@@ -15,6 +15,16 @@ C:\Users\baoha\eclipse-workspace\ASM\src\main\java\IMPLEMENT\USERSIMPL.java
 C:\Users\baoha\eclipse-workspace\ASM\src\main\java\MODEL\CATEGORIES.java
 C:\Users\baoha\eclipse-workspace\ASM\src\main\java\MODEL\NEWS.java
 C:\Users\baoha\eclipse-workspace\ASM\src\main\java\MODEL\NEWSLETTERS.java
+C:\Users\baoha\eclipse-workspace\ASM\src\main\java\MODEL\NEWSVIEWLOG.java
 C:\Users\baoha\eclipse-workspace\ASM\src\main\java\MODEL\USERS.java
+C:\Users\baoha\eclipse-workspace\ASM\src\main\java\SERVLET\READERS\CULTURESERVLET.java
+C:\Users\baoha\eclipse-workspace\ASM\src\main\java\SERVLET\READERS\HOMESERVLET.java
+C:\Users\baoha\eclipse-workspace\ASM\src\main\java\SERVLET\READERS\LIFESERVLET.java
+C:\Users\baoha\eclipse-workspace\ASM\src\main\java\SERVLET\READERS\NEWSREADERSERVLET.java
+C:\Users\baoha\eclipse-workspace\ASM\src\main\java\SERVLET\READERS\POLITICSSERVLET.java
+C:\Users\baoha\eclipse-workspace\ASM\src\main\java\SERVLET\READERS\TRAFFICSERVLET.java
+C:\Users\baoha\eclipse-workspace\ASM\src\main\java\SERVLET\READERS\YOUNGSERVLET.java
+C:\Users\baoha\eclipse-workspace\ASM\src\main\java\SERVLET\REPORTERS\HOMESPVERVLET.java
+C:\Users\baoha\eclipse-workspace\ASM\src\main\java\SERVLET\REPORTERS\ReporterServlet.java
 C:\Users\baoha\eclipse-workspace\ASM\src\main\java\Util\UJDBC.java
 C:\Users\baoha\eclipse-workspace\ASM\src\main\java\Util\UQuery.java

@@ -12,17 +12,18 @@
 	<header><jsp:include page="/VIEWS/header.jsp"></jsp:include></header>
 <div class="container">
     <div class="left">
-        
+        	
     </div>
 
     <div class="mid">
-        <jsp:include page="/VIEWS/docgiaview/mid.jsp"></jsp:include>
+    
+        <jsp:include page="/VIEWS/mid.jsp"></jsp:include>
     </div>
 
     <div class="right">
-        <jsp:include page="/VIEWS/docgiaview/right.jsp"></jsp:include>
+        <jsp:include page="/VIEWS/right.jsp"></jsp:include>
     </div>
-</div>
+</div>	
 
 <footer><jsp:include page="/VIEWS/footer.jsp"></jsp:include></footer>
 </body>

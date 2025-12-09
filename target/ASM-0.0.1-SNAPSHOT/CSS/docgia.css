@@ -10,10 +10,10 @@ body {
 /* --- LAYOUT 3 CỘT --- */
 .container {
 	display: flex;
-
+	flex-direction: row;
 	justify-content: space-between;
 	/* ngang */
-	align-items: center;
+	align-items: flex-start;
 	width: 100%;
 	gap: 20px;
 }
