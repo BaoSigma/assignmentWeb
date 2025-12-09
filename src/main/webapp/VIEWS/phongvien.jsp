@@ -20,7 +20,7 @@
 
     <div class="mid">
     
-        <jsp:include page="/VIEWS/mid.jsp"></jsp:include>
+        <jsp:include page="${pageContent}" />
     </div>
 </div>
 

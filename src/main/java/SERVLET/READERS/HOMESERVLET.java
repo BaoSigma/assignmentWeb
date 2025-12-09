@@ -7,37 +7,36 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Servlet implementation class HOMESERVLET
- */
+import IMPLEMENT.NEWSIMPL;
+
+
+
 @WebServlet("/docgia")
 public class HOMESERVLET extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public HOMESERVLET() {
-        super();
-        // TODO Auto-generated constructor stub
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        // CHỈ LOAD TRANG TRUNG TÂM MẶC ĐỊNH
+    	NEWSIMPL dao = new NEWSIMPL();
+    	request.setAttribute("top5HotNews", dao.getTopHot());
+    	request.setAttribute("top5Newsnew", dao.getTopNew());
+    	request.setAttribute("top5YourNews", null);
+
+        request.setAttribute("pageContent", "/VIEWS/category/TC.jsp");
+
+        request.getRequestDispatcher("/VIEWS/docgia.jsp")
+               .forward(request, response);
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.setAttribute("pageContent", "/VIEWS/category/TC.jsp");
-		request.getRequestDispatcher("/VIEWS/docgia.jsp").forward(request, response);
-		
-	}
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/VIEWS/docgia.jsp").forward(request, response);
-	}
+        request.setAttribute("pageContent", "/VIEWS/category/TC.jsp");
 
+        request.getRequestDispatcher("/VIEWS/docgia.jsp")
+               .forward(request, response);
+    }
 }

@@ -6,74 +6,71 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 
 import IMPLEMENT.NEWSIMPL;
+import IMPLEMENT.NEWSVIEWLOGIMPL;
 import MODEL.NEWS;
+import MODEL.NEWSVIEWLOG;
 
-@WebServlet("/NEWSREADERSERVLET")
+@WebServlet("/news")
 public class NEWSREADERSERVLET extends HttpServlet {
 
-    private NEWSIMPL dao = new NEWSIMPL();
+    private NEWSIMPL newsDao = new NEWSIMPL();
+    private NEWSVIEWLOGIMPL logDao = new NEWSVIEWLOGIMPL();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        doPost(req, resp);
-    }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+        String id = req.getParameter("id");
+        String userId = (String) req.getSession().getAttribute("userId");
 
-        String action = req.getParameter("action");
-
-        if (action == null) {
-            resp.sendRedirect(req.getContextPath() + "/home");
-            return;
-        }
-
-        switch (action) {
-            case "view":
-                viewNews(req, resp);
-                break;
-
-            default:
-                resp.sendRedirect(req.getContextPath() + "/home");
-                break;
-        }
-    }
-
-    private void viewNews(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-
-        String idRaw = req.getParameter("id");
-
-        // kiểm tra id null hoặc lỗi format
-        if (idRaw == null) {
-            req.setAttribute("pageContent", "/VIEWS/404.jsp");
-            req.getRequestDispatcher("/VIEWS/docgia.jsp").forward(req, resp);
-            return;
-        }
-
-        int id;
-        try {
-            id = Integer.parseInt(idRaw);
-        } catch (NumberFormatException e) {
-            req.setAttribute("pageContent", "/VIEWS/404.jsp");
-            req.getRequestDispatcher("/VIEWS/docgia.jsp").forward(req, resp);
-            return;
-        }
-
-        // Lấy dữ liệu
-        NEWS news = dao.findById(String.valueOf(id));
-
-        if (news == null) {
+        // Trường hợp không có id → 404
+        if (id == null || id.isBlank()) {
             req.setAttribute("pageContent", "/VIEWS/404.jsp");
         } else {
-            req.setAttribute("newsDetail", news);
-            req.setAttribute("pageContent", "/VIEWS/menuviews/mid.jsp");
+
+            NEWS news = newsDao.findById(id);
+
+            if (news == null) {
+                req.setAttribute("pageContent", "/VIEWS/404.jsp");
+            } else {
+
+                // 👇 Gửi bài viết sang mid
+                req.setAttribute("newsDetail", news);
+
+                // 👇 Tạo log xem bài
+                if (userId != null) {
+                    NEWSVIEWLOG log = new NEWSVIEWLOG();
+                    log.setUSERID(userId);
+                    log.setNEWSID(id);
+                    log.setVIEWTIME(new Date());
+                    logDao.create(log);     // Ghi log
+                }
+
+                // 👇 Set trang mid-view
+                req.setAttribute("pageContent", "/VIEWS/menuviews/bai-viet.jsp");
+            }
         }
 
-        req.getRequestDispatcher("/VIEWS/docgia.jsp").forward(req, resp);
+        // ==========================
+        // RIGHT PANEL (luôn luôn có)
+        // ==========================
+
+        req.setAttribute("top5HotNews", newsDao.getTopHot());
+        req.setAttribute("top5Newsnew", newsDao.getTopNew());
+
+        // Top bài xem nhiều theo user
+        if (userId != null) {
+            req.setAttribute("top5YourNews", newsDao.getTopViewsByUser(userId));
+        } else {
+            req.setAttribute("top5YourNews", null);
+        }
+        //req.getSession().setAttribute("userId", account.getId());
+
+        // Forward layout tổng
+        req.getRequestDispatcher("/VIEWS/docgia.jsp")
+                .forward(req, resp);
     }
 }

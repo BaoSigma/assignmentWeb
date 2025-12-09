@@ -15,12 +15,14 @@ public class NEWSIMPL implements NEWSDAO {
             "SELECT TOP 5 * FROM News ORDER BY PostedDate DESC";
 
     private static final String SQL_TOP5_VIEWS_BY_USER =
-            "SELECT TOP 5 n.* FROM NewsViewLog l " +
-            "JOIN News n ON l.NewsId = n.Id " +
-            "WHERE l.UserId = ? " +
-            "GROUP BY n.Id, n.Title, n.Content, n.Image, n.PostedDate, " +
-            "n.Author, n.ViewCount, n.CategoryId, n.Home " +
-            "ORDER BY COUNT(*) DESC";
+    	    "SELECT TOP 5 n.* FROM NewsViewLog l " +
+    	    "JOIN News n ON l.NewsId = n.Id " +
+    	    "WHERE l.UserId = ? " +
+    	    "GROUP BY n.Id, n.Title, n.Content, n.Image, n.PostedDate, " +
+    	    "n.Author, n.ViewCount, n.CategoryId, n.Home " +
+    	    "ORDER BY COUNT(*) DESC";
+
+
 
     private static final String SQL_FIND_ID =
             "SELECT * FROM News WHERE Id = ?";
@@ -65,4 +67,5 @@ public class NEWSIMPL implements NEWSDAO {
     public List<NEWS> getTopViewsByUser(String userId) {
         return UQuery.getBeanList(NEWS.class, SQL_TOP5_VIEWS_BY_USER, userId);
     }
+
 }

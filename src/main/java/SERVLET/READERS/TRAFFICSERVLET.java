@@ -7,6 +7,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import IMPLEMENT.NEWSIMPL;
+
+
+
 /**
  * Servlet implementation class TRAFFICSERVLET
  */
@@ -26,6 +30,12 @@ public class TRAFFICSERVLET extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		NEWSIMPL dao = new NEWSIMPL();
+		request.setAttribute("top5HotNews", dao.getTopHot());
+		request.setAttribute("top5Newsnew", dao.getTopNew());
+		request.setAttribute("top5YourNews", null);
+
 		request.setAttribute("pageContent", "/VIEWS/category/GiaoT.jsp");
 		request.getRequestDispatcher("/VIEWS/docgia.jsp").forward(request, response);
 	}

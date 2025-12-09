@@ -13,7 +13,7 @@ public class UJDBC {
    }
    public static Connection openConnection() {
        var driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-       var dburl = "jdbc:sqlserver://BAOHAKURA;database=ASM;encrypt=true;trustServerCertificate=true;";
+       var dburl = "jdbc:sqlserver://192.168.1.45;database=ASM;encrypt=true;trustServerCertificate=true;";
        var username = "ba";
        var password = "123";
        try {

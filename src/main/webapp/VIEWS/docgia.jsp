@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/docgia.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/docgia.css" />
 </head>
 <body>
 <form action="/CONTROLLER/docgiaServlet"></form>
@@ -17,12 +17,13 @@
 
     <div class="mid">
     
-        <jsp:include page="/VIEWS/mid.jsp"></jsp:include>
+        <jsp:include page="${pageContent}" />
     </div>
 
     <div class="right">
-        <jsp:include page="/VIEWS/right.jsp"></jsp:include>
-    </div>
+    <jsp:include page="/VIEWS/right.jsp"></jsp:include>
+</div>
+
 </div>	
 
 <footer><jsp:include page="/VIEWS/footer.jsp"></jsp:include></footer>

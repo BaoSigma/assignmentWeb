@@ -3,67 +3,77 @@ package MODEL;
 import java.util.Date;
 
 public class NEWS {
-	private String ID;
-	private String Title;
-	private String Content;
-	private String Image;
-	private Date PostedDate;
-	private int ViewCount;
-	private String Author;
-	private String CategoryID;
-	private boolean Home;
-	public String getID() {
-		return ID;
-	}
-	public void setID(String iD) {
-		ID = iD;
-	}
-	public String getTitle() {
-		return Title;
-	}
-	public void setTitle(String title) {
-		Title = title;
-	}
-	public String getContent() {
-		return Content;
-	}
-	public void setContent(String content) {
-		Content = content;
-	}
-	public String getImage() {
-		return Image;
-	}
-	public void setImage(String image) {
-		Image = image;
-	}
-	public Date getPostedDate() {
-		return PostedDate;
-	}
-	public void setPostedDate(Date postedDate) {
-		PostedDate = postedDate;
-	}
-	public int getViewCount() {
-		return ViewCount;
-	}
-	public void setViewCount(int viewCount) {
-		ViewCount = viewCount;
-	}
-	public String getAuthor() {
-		return Author;
-	}
-	public void setAuthor(String author) {
-		Author = author;
-	}
-	public String getCategoryID() {
-		return CategoryID;
-	}
-	public void setCategoryID(String categoryID) {
-		CategoryID = categoryID;
-	}
-	public boolean isHome() {
-		return Home;
-	}
-	public void setHome(boolean home) {
-		Home = home;
-	}
+
+    private String id;
+    private String title;
+    private String content;
+    private String image;
+    private Date postedDate;
+    private int viewCount;
+    private String author;
+    private String categoryId;
+    private boolean home;
+
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getImage() {
+        return image;
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Date getPostedDate() {
+        return postedDate;
+    }
+    public void setPostedDate(Date postedDate) {
+        this.postedDate = postedDate;
+    }
+
+    public int getViewCount() {
+        return viewCount;
+    }
+    public void setViewCount(int viewCount) {
+        this.viewCount = viewCount;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public boolean isHome() {
+        return home;
+    }
+    public void setHome(boolean home) {
+        this.home = home;
+    }
 }

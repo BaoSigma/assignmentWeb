@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,88 +10,79 @@
 </head>
 <body>
 
-<h6>Top 5 news hot</h6>
+<h6>Top 5 News Hot</h6>
 <div class="top5hot">
     <c:forEach var="news" items="${top5HotNews}">
         <div class="news-item">
 
-            <!-- Ảnh -->
             <div class="news-img">
-                <img src="${news.Image}" alt="${news.Title}">
+                <img src="${news.image}" alt="${news.title}">
             </div>
 
-            <!-- Tiêu đề + link đọc -->
             <div class="news-title">
-                <a href="${pageContext.request.contextPath}/NEWSREADERSERVLET?action=view&id=${news.ID}">
-                    ${news.Title}
-                </a>
+                <a href="${pageContext.request.contextPath}/news?id=${news.id}">
+
 
                 <h6>Tác giả</h6>
-                <p>${news.Author}</p>
+                <p>${news.author}</p>
             </div>
 
-            <div><p>${news.PostedDate}</p></div>
-            <div><p>${news.ViewCount}</p></div>
+            <div><p>${news.postedDate}</p></div>
+            <div><p>${news.viewCount}</p></div>
 
         </div>
         <hr>
     </c:forEach>
 </div>
 
-
 <br><hr>
-<h6>Top 5 news</h6>
-<div class="top5news">
 
+<h6>Top 5 Mới Nhất</h6>
+<div class="top5news">
     <c:forEach var="news" items="${top5Newsnew}">
         <div class="news-item">
 
-            <!-- Ảnh -->
             <div class="news-img">
-                <img src="${news.Image}" alt="${news.Title}">
+                <img src="${news.image}" alt="${news.title}">
             </div>
 
             <div class="news-title">
-                <a href="${pageContext.request.contextPath}/NEWSREADERSERVLET?action=view&id=${news.ID}">
-                    ${news.Title}
-                </a>
+               <a href="${pageContext.request.contextPath}/news?id=${news.id}">
+
 
                 <h6>Tác giả</h6>
-                <p>${news.Author}</p>
+                <p>${news.author}</p>
             </div>
 
-            <div><p>${news.PostedDate}</p></div>
-            <div><p>${news.ViewCount}</p></div>
+            <div><p>${news.postedDate}</p></div>
+            <div><p>${news.viewCount}</p></div>
 
         </div>
         <hr>
     </c:forEach>
-
 </div>
 
-
 <hr>
-<h6>Top 5 views</h6>
+
+<h6>Top 5 You Viewed</h6>
 
 <c:forEach var="news" items="${top5YourNews}">
     <div class="news-item">
 
-        <!-- Ảnh -->
         <div class="news-img">
-            <img src="${news.Image}" alt="${news.Title}">
+            <img src="${news.image}" alt="${news.title}">
         </div>
 
         <div class="news-title">
-            <a href="${pageContext.request.contextPath}/NEWSREADERSERVLET?action=view&id=${news.ID}">
-                ${news.Title}
-            </a>
+            <a href="${pageContext.request.contextPath}/news?id=${news.id}">
+
 
             <h6>Tác giả</h6>
-            <p>${news.Author}</p>
+            <p>${news.author}</p>
         </div>
 
-        <div><p>${news.PostedDate}</p></div>
-        <div><p>${news.ViewCount}</p></div>
+        <div><p>${news.postedDate}</p></div>
+        <div><p>${news.viewCount}</p></div>
 
     </div>
     <hr>
